@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="120" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="8tp-Xk-hLU">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="8tp-Xk-hLU">
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -56,6 +56,7 @@
                                             <outlet property="horoscopeDateLabel" destination="8hX-eT-cO7" id="bkg-QO-J6i"/>
                                             <outlet property="horoscopeImageView" destination="JsU-0l-oF3" id="Zfe-Sm-tIa"/>
                                             <outlet property="horoscopeNameLabel" destination="6J0-KY-BIL" id="bJ0-uo-csE"/>
+                                            <segue destination="EiH-W2-rfN" kind="show" id="loa-kl-UGC"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -77,6 +78,64 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="139.69465648854961" y="3.5211267605633805"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="Qpc-2J-NbO">
+            <objects>
+                <viewController id="EiH-W2-rfN" customClass="DetailViewController" customModule="Horoscope" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CYI-ar-KQa" customClass="Horoscopede">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RLX-8p-kOr">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r3z-8u-lmI">
+                                        <rect key="frame" x="38" y="68" width="316" height="197"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ACUARIO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E94-5m-TIR">
+                                        <rect key="frame" x="138" y="298" width="117" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gDQ-JR-wUf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RLX-8p-kOr" firstAttribute="leading" secondItem="gDQ-JR-wUf" secondAttribute="leading" id="Pi3-qE-Qow"/>
+                            <constraint firstItem="gDQ-JR-wUf" firstAttribute="bottom" secondItem="RLX-8p-kOr" secondAttribute="bottom" id="Sj9-kK-6LJ"/>
+                            <constraint firstItem="gDQ-JR-wUf" firstAttribute="trailing" secondItem="RLX-8p-kOr" secondAttribute="trailing" id="hnq-ed-czj"/>
+                            <constraint firstItem="RLX-8p-kOr" firstAttribute="top" secondItem="gDQ-JR-wUf" secondAttribute="top" id="zjg-Nb-OYP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="detailsimageview" destination="r3z-8u-lmI" id="6Ih-M6-Xp4"/>
+                        <outlet property="detailstitleview" destination="E94-5m-TIR" id="dyb-d3-Qzp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fUg-xz-srv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1052.6717557251909" y="3.5211267605633805"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="HNA-Hw-iyG">
+            <objects>
+                <viewController id="dZl-KE-HDc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lZN-OO-tRW">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="V3U-BQ-Sj4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vke-DQ-Owe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1767" y="4"/>
         </scene>
     </scenes>
     <resources>
