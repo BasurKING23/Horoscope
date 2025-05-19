@@ -20,6 +20,21 @@ class ListViewController: UIViewController, UITableViewDataSource {
         
         tableview.dataSource = self
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableview.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let detailVC = segue.destination as! DetailViewController
+        let IndexPath = tableview.indexPathForSelectedRow!
+        let horoscope = horoscopeList[IndexPath.row]
+        detailVC.horoscope = horoscope
+        tableview.deselectRow(at: IndexPath, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return horoscopeList.count
     }
